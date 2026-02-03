@@ -8,7 +8,7 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1>
-            Learn Smarter with <span>NextGenEd</span>
+            Learn Smarter with <span>StudyHub</span>
           </h1>
           <p>
             A modern learning platform for students and teachers to grow
@@ -31,7 +31,7 @@ function Home() {
 
       {/* FEATURES */}
       <section className="features">
-        <h2>Why Choose Our NextGenEd?</h2>
+        <h2>Why Choose Our StudyHub?</h2>
         <div className="feature-grid">
           <div className="feature-card">
             <h3>🎓 Expert Teachers</h3>
@@ -94,10 +94,7 @@ function Home() {
             <h3>👩‍🏫 Teachers</h3>
             <p>Create & manage courses</p>
           </div>
-          <div className="role-card">
-            <h3>🛠 Admin</h3>
-            <p>Manage users & platform</p>
-          </div>
+          <div className="role-card"></div>
         </div>
       </section>
     </div>
