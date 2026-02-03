@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CourseCard from "../components/CourseCard";
+import CourseCard from "../Components/CourseCard";
 import "../Styles/Courses.css";
 
 function Courses() {
