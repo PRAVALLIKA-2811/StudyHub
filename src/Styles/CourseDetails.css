@@ -1,0 +1,104 @@
+/* MAIN CONTAINER */
+.course-details {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* TITLE */
+.course-details h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+/* DESCRIPTION */
+.course-details p {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* COURSE META INFO */
+.course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.course-meta span {
+  background-color: #f3f4f6;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* SYLLABUS HEADING */
+.course-details h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+/* SYLLABUS LIST */
+.course-details ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.course-details ul li {
+  padding: 10px 0;
+  font-size: 15px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* START BUTTON */
+.start-btn {
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #4338ca;
+}
+
+/* NOT FOUND MESSAGE */
+.course-details h2 {
+  text-align: center;
+  color: #ef4444;
+  margin-top: 50px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .course-details {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .course-details h1 {
+    font-size: 26px;
+  }
+
+  .course-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
