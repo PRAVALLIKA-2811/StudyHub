@@ -94,7 +94,6 @@ function Home() {
             <h3>👩‍🏫 Teachers</h3>
             <p>Create & manage courses</p>
           </div>
-          <div className="role-card"></div>
         </div>
       </section>
     </div>

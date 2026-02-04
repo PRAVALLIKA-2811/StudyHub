@@ -7,20 +7,32 @@ function StudentDashboard() {
     <div className="dashboard-container">
       {/* HEADER */}
       <header className="dashboard-header">
-        <h1>🎓 Student Dashboard</h1>
-        <p>Welcome back, keep learning!</p>
+        <div>
+          <h1>🎓 Student Dashboard</h1>
+          <p>Welcome back, keep learning!</p>
+        </div>
       </header>
 
       {/* QUICK ACTIONS */}
       <section className="actions-section">
         <h2>Quick Actions</h2>
+
         <div className="actions-grid">
           <Link to="/courses">
             <button className="action-btn">📖 Browse Courses</button>
           </Link>
-          <button className="action-btn">📝 Assignments</button>
-          <button className="action-btn">📊 Progress Report</button>
-          <button className="action-btn">🎖 Certificates</button>
+
+          <Link to="/assignments">
+            <button className="action-btn">📝 Assignments</button>
+          </Link>
+
+          <Link to="/progress">
+            <button className="action-btn">📊 Progress Report</button>
+          </Link>
+
+          <Link to="/certificates">
+            <button className="action-btn">🎖 Certificates</button>
+          </Link>
         </div>
       </section>
       <br />
@@ -49,6 +61,7 @@ function StudentDashboard() {
       {/* COURSES */}
       <section className="courses-section">
         <h2>My Courses</h2>
+
         <div className="course-grid">
           <div className="course-card">
             <h3>React Basics</h3>

@@ -1,0 +1,83 @@
+.about-container {
+  font-family: "Segoe UI", sans-serif;
+  color: #1e293b;
+}
+
+/* HERO */
+.about-hero {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.about-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* CONTENT */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-card {
+  background: #cdd9e4;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card h2 {
+  margin-bottom: 12px;
+  color: #1e3a8a;
+}
+
+.about-card ul {
+  padding-left: 20px;
+}
+
+.about-card li {
+  margin-bottom: 8px;
+}
+
+/* FOOTER */
+.about-footer {
+  text-align: center;
+  padding: 20px;
+  background: #0f172a;
+  color: #facc15;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-logo {
+    width: 90px;
+  }
+}

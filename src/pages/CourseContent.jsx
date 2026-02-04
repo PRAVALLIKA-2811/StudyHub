@@ -1,20 +1,22 @@
 import { useParams, useNavigate } from "react-router-dom";
-import "../Styles/CourseDetails.css";
+import { useEffect } from "react";
 
-function CourseDetails() {
+function CourseContent() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-  const userRole = localStorage.getItem("userRole");
+  // ✅ Redirect if not logged in
+  useEffect(() => {
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      navigate("/login");
+    }
+  }, [navigate]);
+
+  // ✅ All courses data
   const courses = [
     {
       id: "react-basics",
       title: "React Basics",
-      description: "Learn React from scratch with hands-on projects",
-      level: "Beginner",
-      duration: "6 Weeks",
-      instructor: "John Doe",
       syllabus: [
         "Introduction to React",
         "JSX & Components",
@@ -26,10 +28,6 @@ function CourseDetails() {
     {
       id: "advanced-react",
       title: "Advanced React",
-      description: "Hooks, Context API, performance optimization",
-      level: "Advanced",
-      duration: "5 Weeks",
-      instructor: "Emily Carter",
       syllabus: [
         "Advanced Hooks",
         "Context API",
@@ -41,10 +39,6 @@ function CourseDetails() {
     {
       id: "node-fundamentals",
       title: "Node.js Fundamentals",
-      description: "Build backend APIs using Node and Express",
-      level: "Intermediate",
-      duration: "5 Weeks",
-      instructor: "Jane Smith",
       syllabus: [
         "Node Basics",
         "Express.js",
@@ -55,10 +49,6 @@ function CourseDetails() {
     {
       id: "mongodb-essentials",
       title: "MongoDB Essentials",
-      description: "Master MongoDB database design and queries",
-      level: "Beginner",
-      duration: "4 Weeks",
-      instructor: "Robert Brown",
       syllabus: [
         "MongoDB Basics",
         "CRUD Operations",
@@ -69,10 +59,6 @@ function CourseDetails() {
     {
       id: "fullstack-development",
       title: "Full Stack Development",
-      description: "Build complete applications using MERN stack",
-      level: "Advanced",
-      duration: "10 Weeks",
-      instructor: "Sarah Johnson",
       syllabus: [
         "Frontend with React",
         "Backend with Node & Express",
@@ -84,10 +70,6 @@ function CourseDetails() {
     {
       id: "javascript-mastery",
       title: "JavaScript Mastery",
-      description: "Deep dive into modern JavaScript concepts",
-      level: "Intermediate",
-      duration: "6 Weeks",
-      instructor: "David Miller",
       syllabus: [
         "ES6+ Features",
         "Closures & Hoisting",
@@ -98,10 +80,6 @@ function CourseDetails() {
     {
       id: "typescript-essentials",
       title: "TypeScript Essentials",
-      description: "Learn TypeScript for scalable applications",
-      level: "Intermediate",
-      duration: "4 Weeks",
-      instructor: "Laura Wilson",
       syllabus: [
         "TypeScript Basics",
         "Types & Interfaces",
@@ -112,10 +90,6 @@ function CourseDetails() {
     {
       id: "expressjs-mastery",
       title: "Express.js Mastery",
-      description: "Advanced backend development using Express",
-      level: "Advanced",
-      duration: "5 Weeks",
-      instructor: "Michael Anderson",
       syllabus: [
         "Middleware",
         "Authentication & Authorization",
@@ -127,28 +101,21 @@ function CourseDetails() {
 
   const course = courses.find((c) => c.id === id);
 
-  // ✅ THEN CHECK
   if (!course) {
     return <h2>❌ Course not found</h2>;
   }
 
   return (
-    <div className="course-details">
-      <h1>{course.title}</h1>
-      <p>{course.description}</p>
+    <div style={{ padding: "30px" }}>
+      <h1>🎓 {course.title} - Course Content</h1>
 
-      <button
-        onClick={() => {
-          if (!isLoggedIn) navigate("/login");
-          else if (userRole === "student")
-            navigate(`/courses/${course.id}/learn`);
-          else alert("Only students can enroll");
-        }}
-      >
-        Start Learning
-      </button>
+      <ul>
+        {course.syllabus.map((lesson, index) => (
+          <li key={index}>{lesson}</li>
+        ))}
+      </ul>
     </div>
   );
 }
 
-export default CourseDetails;
+export default CourseContent;

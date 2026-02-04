@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CourseCard from "../Components/CourseCard";
-import "../Styles/Courses.css";
+import CourseCard from "../Components/CourseCard"; // ✅ Make sure folder and case matches
+import "../Styles/Courses.css"; // Optional styling
 
 function Courses() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,6 +56,7 @@ function Courses() {
     },
   ];
 
+  // Filter courses based on search term
   const filteredCourses = courses.filter((course) =>
     course.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
@@ -64,6 +65,7 @@ function Courses() {
     <div className="courses-container">
       <h2>📚 Available Courses</h2>
 
+      {/* Search Bar */}
       <div className="search-bar">
         <input
           type="text"
@@ -73,10 +75,15 @@ function Courses() {
         />
       </div>
 
+      {/* Courses Grid */}
       <div className="course-grid">
-        {filteredCourses.map((course) => (
-          <CourseCard key={course.id} course={course} />
-        ))}
+        {filteredCourses.length > 0 ? (
+          filteredCourses.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))
+        ) : (
+          <p>No courses found 😔</p>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,110 @@
+.profile-page {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  padding: 20px;
+}
+
+.profile-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Avatar */
+.avatar {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Name */
+.profile-card h2 {
+  margin-top: 15px;
+  font-size: 1.6rem;
+}
+
+.role {
+  color: #2563eb;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Info grid */
+.profile-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.profile-info div {
+  background: #f1f5f9;
+  padding: 12px 15px;
+  border-radius: 8px;
+}
+
+.profile-info span {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.profile-info p {
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.active {
+  color: green;
+}
+
+/* Actions */
+.profile-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.profile-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #2563eb;
+  color: white;
+  transition: 0.3s;
+}
+
+.profile-actions button:hover {
+  background: #1e40af;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 20px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+}

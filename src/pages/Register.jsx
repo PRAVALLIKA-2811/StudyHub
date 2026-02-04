@@ -18,6 +18,7 @@ function Register() {
 
   const [errors, setErrors] = useState({});
 
+  // 🔁 HANDLE INPUT CHANGE
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -26,6 +27,7 @@ function Register() {
     });
   };
 
+  // ✅ FORM VALIDATION
   const validate = () => {
     let newErrors = {};
 
@@ -63,14 +65,20 @@ function Register() {
     return Object.keys(newErrors).length === 0;
   };
 
+  // 🚀 SUBMIT HANDLER (⭐ MAIN CHANGE IS HERE ⭐)
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validate()) {
-      alert("Registration Successful 🎉");
-      console.log(formData);
+      // ✅ SAVE LOGIN DATA
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userRole", formData.role);
+      localStorage.setItem("userName", formData.name);
+      localStorage.setItem("userEmail", formData.email);
 
-      // 🔁 Role-based redirect
+      alert("Registration Successful 🎉");
+
+      // 🔁 ROLE BASED REDIRECT
       if (formData.role === "student") {
         navigate("/student");
       } else if (formData.role === "teacher") {
@@ -85,7 +93,7 @@ function Register() {
         <h2>Create Account ✨</h2>
         <p>Join our Learning Management System</p>
 
-        {/* Name & Phone */}
+        {/* NAME & PHONE */}
         <div className="input-row">
           <div className="input-group">
             <input
@@ -110,7 +118,7 @@ function Register() {
           </div>
         </div>
 
-        {/* Email */}
+        {/* EMAIL */}
         <div className="input-group">
           <input
             type="email"
@@ -122,7 +130,7 @@ function Register() {
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
 
-        {/* Institution */}
+        {/* INSTITUTION */}
         <div className="input-group">
           <input
             type="text"
@@ -136,7 +144,7 @@ function Register() {
           )}
         </div>
 
-        {/* Passwords */}
+        {/* PASSWORDS */}
         <div className="input-row">
           <div className="input-group">
             <input
@@ -165,7 +173,7 @@ function Register() {
           </div>
         </div>
 
-        {/* Role */}
+        {/* ROLE */}
         <div className="input-group">
           <select name="role" value={formData.role} onChange={handleChange}>
             <option value="">Select Role</option>
@@ -175,7 +183,7 @@ function Register() {
           {errors.role && <span className="error">{errors.role}</span>}
         </div>
 
-        {/* Terms */}
+        {/* TERMS */}
         <div className="checkbox-group">
           <input
             type="checkbox"
@@ -187,12 +195,12 @@ function Register() {
         </div>
         {errors.terms && <span className="error">{errors.terms}</span>}
 
-        {/* Submit */}
+        {/* SUBMIT */}
         <button type="submit" className="register-btn">
           Create Account
         </button>
 
-        {/* Footer */}
+        {/* FOOTER */}
         <div className="footer-text">
           <span>Already have an account?</span>
           <Link to="/login"> Login</Link>

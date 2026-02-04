@@ -50,7 +50,11 @@ function Login() {
     e.preventDefault();
 
     if (validate()) {
-      // 🔐 Later: API call goes here
+      // 🔐 Store login state
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userRole", formData.role);
+      localStorage.setItem("userEmail", formData.email);
+
       alert("Login Successful ✅");
 
       // Role-based navigation
